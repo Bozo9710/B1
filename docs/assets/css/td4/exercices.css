@@ -1,0 +1,12 @@
+button{
+    
+    outline: none;
+    background-color: lightcyan;
+    box-shadow: 0 3px green;
+    font-size: 18px;
+    margin: 10px;
+
+}
+body{
+    background-color: white;
+}
