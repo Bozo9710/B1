@@ -16,7 +16,7 @@
             <label for="CouleurText">Couleur du texte:</label>
             <input type="color" id="CouleurText" value="#000000">
         </div>
-
+        
         <!-- CHoisir la taille de mon texte -->
         <div class="">
             <label for="taille">Taille de la police:</label>
@@ -24,12 +24,22 @@
             <span id="tailleValeur">20px</span>
         </div>
 
+        <!--Choisir la police d'écriture-->
+        <div class="">
+            <label for="Police">Police d'écriture:</label>
+            <select id="Police">
+                <option value="Arial, Helvetica, sans-serif">Arial</option>
+                <option value="'Courier New', Courier, monospace">Courrier New</option>
+                <option value="'Times New Roman', Times, serif">Time New Roman</option>
+            </select>
+        </div>
+
         <!-- Chosir l'alignement du texte -->
         <div class="">
             <label for="AlignementText">Alignement du texte:</label>
             <select id="AlignementText">
-                <option value="left">Gauche</option>
                 <option value="center">Centre</option>
+                <option value="left">Gauche</option>
                 <option value="right">Droite</option>
             </select>
         </div>
@@ -55,7 +65,7 @@
         </div>
     </div>
 
-    <div id="modt">
+    <div class="mot" id="modt">
         Hello World ;Bonjour le Monde;Hola Mundo;Hallo Welt; Ciao Mondo;Olá Mundo;Hallo Wereld;Привет, мир;こんにちは、世界
     </div>
     <script src="./../../assets/js/td4/style-illustration.js"></script>
