@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+    background-image:url(./../../image/space.jpg);
+    color: yellow;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size:large;
+}
+
+#link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: yellow;
+    display: block; 
+    margin-top: 20px;
+}
+div{
+    color: blueviolet;
+}
