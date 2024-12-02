@@ -11,6 +11,9 @@ body{
     flex-direction: column;
     font-size:large;
 }
+div{
+    text-decoration: underline;
+}
 
 #link{
     display: flex;
