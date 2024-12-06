@@ -1,139 +1,182 @@
-/* Barre de navigation */
-header {
-    background-color: #333;
-    color: rgb(255, 255, 255);
-    padding: 10px 0;
-}
-.header-container .profile{
-    display: flex;
-    align-items: center;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.profile h1, .header-title h1 {
-    margin: 0;
-}
-#link1{
-    text-decoration: none;
-    color: #333;
-    background-color: #4CAF50; /* Bouton vert pour mode jour */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    
-}
-#link{
-    text-decoration: none;
-    color: #333;
-
-}
-
-
-nav ul {
-    list-style-type: none;
+/* Global */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(120deg, #2980b9, #6bb9ff); /* Gradient de bleu moderne */
+    color: #fff;
+    min-height: 100vh;
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    text-align: center; /* Centrer le texte */
+    transition: background-color 0.3s, color 0.3s;
+    overflow: hidden;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    background-color: #444;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: #555;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-}
-/* Style pour les bulles */
-.bubble {
-    background: linear-gradient(to right, #4CAF50, #2196F3); /* Couleur de fond de la bulle */
-    border-radius: 25px; /* Bords arrondis pour un effet de bulle */
-    padding: 20px; /* Espace à l'intérieur de la bulle */
-    margin: 15px 0; /* Espacement entre les bulles */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de flottement */
-    text-align: center; /* Centrer le texte à l'intérieur de la bulle */
-}
-
-/* Style des liens à l'intérieur des bulles */
-.bubble a {
-    text-decoration: none; /* Enlève le soulignement */
-    color: #818181; /* Couleur du texte */
-    font-weight: bold; /* Texte en gras */
-    display: block; /* Chaque lien sur une nouvelle ligne */
-    margin: 10px 0; /* Espacement entre les liens */
-}
-
-/* Ajout d'une couleur de fond et un effet au survol des liens */
-.bubble a:hover {
-    background-color:linear-gradient(to left, #ff8d0b, #21f344); /* Fond au survol */
-    padding: 2.5px; /* Espacement au survol */
-    border-radius: 5px; /* Coins arrondis au survol */
-}
-
-/* Style global pour le corps de la page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Fond de la page */
-    padding: 20px; /* Espacement autour du contenu */
-}
-
-header {
-    background:linear-gradient(to left, #ff8d0b, #21f344);; /* Fond sombre pour l'en-tête */
-    color: white; /* Texte en blanc */
-    padding: 30px;
-}
-
-footer {
-    text-align: center;
-    background:linear-gradient(to left, #ff8d0b, #21f344);
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
-}
-#modeToggle {
-    background-color: #4CAF50; /* Bouton vert pour mode jour */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#modeToggle:hover {
-    background-color: #7abd0f;
-}
+/* Mode Nuit */
 body.dark-mode {
-    background-color: #5e5e5e; /* Fond sombre pour le mode nuit */
-    color: #e0e0e0; /* Texte clair pour le mode nuit */
+    background: #2c3e50;
+    color: #ecf0f1;
 }
 
-header.dark-mode {
-    background-color: #969696; /* En-tête sombre pour le mode nuit */
+/* Header */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 20px; /* Conserver le padding pour l'espacement interne */
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    margin-top: -175px; /* Supprimer l'espace au-dessus du header */
 }
 
-footer.dark-mode {
-    background-color: #969696; /* Pied de page sombre pour le mode nuit */
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 2px;
+
 }
 
-#modeToggle.dark-mode {
-    background-color: #f44336; /* Bouton rouge pour mode nuit */
+/* Animation de texte (nouvelle version) */
+.typing {
+    font-size: 1.3rem;
+    animation: fadeIn 2s ease-out, slideIn 1.5s ease-out;
+    opacity: 1; /* L'opacité restera à 1 après l'animation */
+}
+
+/* Animation d'apparition progressive */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation de glissement horizontal */
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Navbar */
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav a {
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+/* Bouton Mode */
+button {
+    padding: 8px 15px;
+    font-size: 1.5rem;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Boutons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#btnAfficher {
+    background: #27ae60;
+    color: white;
+}
+
+#btnCacherTout {
+    background: #e74c3c;
+    color: white;
+}
+
+button:hover {
+    filter: brightness(0.9);
+    transform: scale(1.05);
+}
+
+/* Dossiers et projets */
+.folders {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.folder {
+    font-size: 1.2rem;
+    padding: 15px;
+    margin: 10px 0;
+    background: #fff;
+    color: #333;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.folder:hover {
+    transform: scale(1.05);
+    background-color: #ecf0f1;
+}
+
+/* Liste des projets */
+.projects {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.projects li {
+    margin: 8px 0;
+}
+
+.projects li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.projects li a:hover {
+    color: #f39c12; /* Jaune lumineux au survol */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
 }

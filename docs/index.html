@@ -1,79 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Index de Lothaire</title>
-    <link rel="stylesheet" href="./assets/css/index/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index de Cours SLAM</title>
+  <link rel="stylesheet" href="./assets/css/index/index.css">
 </head>
 <body>
 
-    <header>
-        <!-- Barre de navigation -->
-        <div class="header-container">
-            <!-- Profil -->
-        <div class="profile">
-                <h1>Lothaire Quintard BLOC 1  </h1>
-        </div>
-        <button id="modeToggle" onclick="toggleMode()">Mode Nuit</button>
-            <!-- Titre principal -->
-            
-            <!-- Menu de navigation -->
-        <a id="link1" href="https://github.com/Bozo9710">Mon Github</a>     
-        </div>
-    </header>
+  <header>
+    <div class="header-container">
+      <div class="profile">
+        <h1>Lothaire Quintard BLOC 1</h1>
+      </div>
+      <nav>
+        <a href="https://github.com/Bozo9710" id="link1" target="_blank" rel="noopener noreferrer">Mon Github</a>
+        <!-- Boutons mode nuit/jour -->
+        <button id="modeToggle" onclick="toggleMode()" aria-label="Toggle night mode">🌙</button>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <h2>Documents des TD</h2>
-        
-        <!-- Bulle pour TD1 -->
-        <div class="bubble">
-            <h3>TD1</h3>
-            <a id="link" href="https://github.com/Bozo9710/B1/blob/main/docs/pages/td1/MethodeGETetPOST.md">Questions</a>
-        </div>
+  <main>
+    <section class="intro">
+      <h2>Bienvenue !</h2>
+      <p class="typing">Retrouvez ici tous les documents importants et projets réalisés dans vos TDs.</p>
+    </section>
 
-        <!-- Bulle pour TD2 -->
-        <div class="bubble">
-            <h3>TD2</h3>
-            <a id="link" href="./pages/td2/mention-légales.html">Mentions légales</a><br>
-            <a id="link" href="./pages/td2/pata-a-crepe.html">Pâtes à crêpes</a>
-        </div>
+    <div class="buttons">
+      <button id="btnAfficher" onclick="btnToutAfficher()">🔍 Tout afficher</button>
+      <button id="btnCacherTout" onclick="btnRienAfficher()">🚫 Tout cacher</button>
+    </div>
 
-        <!-- Bulle pour TD3 -->
-        <div class="bubble">
-            <h3>TD3</h3>
-            <a id="link" href="./pages/td3/conseil-gestion.html">Conseil Gestion</a><br>
-            <a id="link" href="./pages/td3/Blog.html">Blog</a><br>
-            <a id="link" href="./pages/td3/A Propos de nous.html">A Propos de nous</a>
-        </div>
+    <section class="folders">
+      <div class="folder" onclick="toggleProjects('td1')">📁 TD1</div>
+      <ul id="td1" class="projects">
+        <li><a href="https://github.com/Bozo9710/B1/blob/main/docs/pages/td1/MethodeGETetPOST.md">Questions</a></li>
+      </ul>
 
-        <!-- Bulle pour TD4 -->
-        <div class="bubble">
-            <h3>TD4</h3>
-            <a id="link" href="./../docs/pages/td4/calculatrice.html">Calculatrice</a><br>
-            <a id="link" href="./pages/td4/todolist.html">ToDoList</a>
-        </div>
-    </main>
+      <div class="folder" onclick="toggleProjects('td2')">📁 TD2</div>
+      <ul id="td2" class="projects">
+        <li><a href="./pages/td2/mention-légales.html">Mentions légales</a></li>
+        <li><a href="./pages/td2/pata-a-crepe.html">Pâtes à crêpes</a></li>
+      </ul>
 
-    <footer>
-        <p>&copy; Index de Lothaire. Tous droits réservés.</p>
-    </footer>
-    <script>
-    // Fonction pour basculer entre le mode jour et le mode nuit
-        function toggleMode() {
-            var body = document.body;
-            var button = document.getElementById('modeToggle');
-            
-            // Ajoute ou enlève la classe 'dark-mode' au body
-            body.classList.toggle('dark-mode');
-            
-            // Change le texte du bouton en fonction du mode actuel
-            if (body.classList.contains('dark-mode')) {
-                button.textContent = "Mode Jour"; // Le bouton passe à Mode Jour
-            } else {
-                button.textContent = "Mode Nuit"; // Le bouton passe à Mode Nuit
-            }
-        }
-        </script>
+      <div class="folder" onclick="toggleProjects('td3')">📁 TD3</div>
+      <ul id="td3" class="projects">
+        <li><a href="./pages/td3/conseil-gestion.html">Conseil Gestion</a></li>
+        <li><a href="./pages/td3/Blog.html">Blog</a></li>
+        <li><a href="./pages/td3/A Propos de nous.html">A Propos de nous</a></li>
+      </ul>
+
+      <div class="folder" onclick="toggleProjects('td4')">📁 TD4</div>
+      <ul id="td4" class="projects">
+        <li><a href="./../docs/pages/td4/calculatrice.html">Calculatrice</a></li>
+        <li><a href="./pages/td4/todolist.html">ToDoList</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Index de Lothaire. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Toggle affichage des projets
+    function toggleProjects(tdId) {
+      const projectsList = document.getElementById(tdId);
+      projectsList.style.display = projectsList.style.display === "none" || projectsList.style.display === "" ? "block" : "none";
+    }
+
+    // Tout afficher
+    function btnToutAfficher() {
+      const allProjects = document.querySelectorAll(".projects");
+      allProjects.forEach(project => (project.style.display = "block"));
+    }
+
+    // Tout cacher
+    function btnRienAfficher() {
+      const allProjects = document.querySelectorAll(".projects");
+      allProjects.forEach(project => (project.style.display = "none"));
+    }
+
+    // Mode Nuit/Mode Jour
+    function toggleMode() {
+      var body = document.body;
+      var button = document.getElementById('modeToggle');
+      
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        button.textContent = "🌞"; // Emote pour mode jour
+      } else {
+        button.textContent = "🌙"; // Emote pour mode nuit
+      }
+    }
+  </script>
 
 </body>
 </html>
