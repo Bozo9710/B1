@@ -1,27 +1,139 @@
-body{
-    text-align: center;
-    background-image:url(./../../image/space.jpg);
-    color: yellow;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size:large;
+/* Barre de navigation */
+header {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
 }
-div{
-    text-decoration: underline;
+.header-container .profile{
+    display: flex;
+    align-items: center;
 }
 
-#link{
+.header-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
+    padding: 0 20px;
+}
+
+.profile h1, .header-title h1 {
+    margin: 0;
+}
+#link1{
     text-decoration: none;
-    color: yellow;
-    display: block; 
+    color: #333;
+    background-color: #4CAF50; /* Bouton vert pour mode jour */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+#link{
+    text-decoration: none;
+    color: #333;
+
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+/* Style pour les bulles */
+.bubble {
+    background: linear-gradient(to right, #4CAF50, #2196F3); /* Couleur de fond de la bulle */
+    border-radius: 25px; /* Bords arrondis pour un effet de bulle */
+    padding: 20px; /* Espace à l'intérieur de la bulle */
+    margin: 15px 0; /* Espacement entre les bulles */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de flottement */
+    text-align: center; /* Centrer le texte à l'intérieur de la bulle */
+}
+
+/* Style des liens à l'intérieur des bulles */
+.bubble a {
+    text-decoration: none; /* Enlève le soulignement */
+    color: #818181; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+    display: block; /* Chaque lien sur une nouvelle ligne */
+    margin: 10px 0; /* Espacement entre les liens */
+}
+
+/* Ajout d'une couleur de fond et un effet au survol des liens */
+.bubble a:hover {
+    background-color:linear-gradient(to left, #ff8d0b, #21f344); /* Fond au survol */
+    padding: 2.5px; /* Espacement au survol */
+    border-radius: 5px; /* Coins arrondis au survol */
+}
+
+/* Style global pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fond de la page */
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+header {
+    background:linear-gradient(to left, #ff8d0b, #21f344);; /* Fond sombre pour l'en-tête */
+    color: white; /* Texte en blanc */
+    padding: 30px;
+}
+
+footer {
+    text-align: center;
+    background:linear-gradient(to left, #ff8d0b, #21f344);
+    color: white;
+    padding: 10px;
     margin-top: 20px;
+}
+#modeToggle {
+    background-color: #4CAF50; /* Bouton vert pour mode jour */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#modeToggle:hover {
+    background-color: #7abd0f;
+}
+body.dark-mode {
+    background-color: #5e5e5e; /* Fond sombre pour le mode nuit */
+    color: #e0e0e0; /* Texte clair pour le mode nuit */
+}
+
+header.dark-mode {
+    background-color: #969696; /* En-tête sombre pour le mode nuit */
+}
+
+footer.dark-mode {
+    background-color: #969696; /* Pied de page sombre pour le mode nuit */
+}
+
+#modeToggle.dark-mode {
+    background-color: #f44336; /* Bouton rouge pour mode nuit */
+}

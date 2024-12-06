@@ -2,63 +2,78 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Index de Lothaire </title>
-    <link rel="stylesheet" href="./assets/css/index/index.css   ">
+    <title>Index de Lothaire</title>
+    <link rel="stylesheet" href="./assets/css/index/index.css">
 </head>
 <body>
 
     <header>
+        <!-- Barre de navigation -->
+        <div class="header-container">
+            <!-- Profil -->
         <div class="profile">
-            <h1>Lothaire QUINTARD</h1>
+                <h1>Lothaire Quintard BLOC 1  </h1>
         </div>
-        <div class="header-title">
-            <h1>Bloc1-SLAM</h1>
-            <h3>Mes informations</h3>
+        <button id="modeToggle" onclick="toggleMode()">Mode Nuit</button>
+            <!-- Titre principal -->
+            
+            <!-- Menu de navigation -->
+        <a id="link1" href="https://github.com/Bozo9710">Mon Github</a>     
         </div>
-        <nav>
-            
-                <a id="link" href="https://github.com/Bozo9710">Mon Github</a>
-
-            
-        </nav>
     </header>
+
     <main>
-        <h2>Documents des TD </h2>
-        <p>TD1</p>
+        <h2>Documents des TD</h2>
         
-        
+        <!-- Bulle pour TD1 -->
+        <div class="bubble">
+            <h3>TD1</h3>
             <a id="link" href="https://github.com/Bozo9710/B1/blob/main/documents/MethodeGETetPOST.md">Questions</a>
-        
-        <br>
-        <div>TD2</div>
-        
-            <a id="link" href="./pages/td2/mention-légales.html">Mentions légales</a>
-            <br>
-            <a id="link" href="./pages/td2/pata-a-crepe.html">Pates à crèpes</a>
-        
-            <br>
-        <div>TD3</div>
-        
-            <a id="link" href="./pages/td3/conseil-gestion.html">Conseil Gestion</a>
-            <br>
-            <a id="link" href="./pages/td3/Blog.html">Blog</a>
-            <br>
-            <a id="link" href="./pages/td3/A Propos de nous.html">About Us</a>
-        
-            <br>
-        <div>TD4</div>
-        
+        </div>
 
-            <a id="link" href="./../docs/pages/td4/calculatrice.html">Calculatrice</a>
-            <br>
+        <!-- Bulle pour TD2 -->
+        <div class="bubble">
+            <h3>TD2</h3>
+            <a id="link" href="./pages/td2/mention-légales.html">Mentions légales</a><br>
+            <a id="link" href="./pages/td2/pata-a-crepe.html">Pâtes à crêpes</a>
+        </div>
+
+        <!-- Bulle pour TD3 -->
+        <div class="bubble">
+            <h3>TD3</h3>
+            <a id="link" href="./pages/td3/conseil-gestion.html">Conseil Gestion</a><br>
+            <a id="link" href="./pages/td3/Blog.html">Blog</a><br>
+            <a id="link" href="./pages/td3/A Propos de nous.html">A Propos de nous</a>
+        </div>
+
+        <!-- Bulle pour TD4 -->
+        <div class="bubble">
+            <h3>TD4</h3>
+            <a id="link" href="./../docs/pages/td4/calculatrice.html">Calculatrice</a><br>
             <a id="link" href="./pages/td4/todolist.html">ToDoList</a>
-
-        
+        </div>
     </main>
-    <footer>
-        <p>&copy; Index de Lothaire . Tous droits réservés.</p>
-    </footer>
 
-    
+    <footer>
+        <p>&copy; Index de Lothaire. Tous droits réservés.</p>
+    </footer>
+    <script>
+    // Fonction pour basculer entre le mode jour et le mode nuit
+        function toggleMode() {
+            var body = document.body;
+            var button = document.getElementById('modeToggle');
+            
+            // Ajoute ou enlève la classe 'dark-mode' au body
+            body.classList.toggle('dark-mode');
+            
+            // Change le texte du bouton en fonction du mode actuel
+            if (body.classList.contains('dark-mode')) {
+                button.textContent = "Mode Jour"; // Le bouton passe à Mode Jour
+            } else {
+                button.textContent = "Mode Nuit"; // Le bouton passe à Mode Nuit
+            }
+        }
+        </script>
+
 </body>
 </html>
